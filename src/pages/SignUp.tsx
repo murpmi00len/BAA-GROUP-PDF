@@ -60,8 +60,7 @@ export function SignUp() {
 
         if (profileError) throw profileError;
       }
-      await supabase.auth.signOut(); // Logout the user immediately to redirect login page
-      navigate("/login");
+      navigate("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
     } finally {
